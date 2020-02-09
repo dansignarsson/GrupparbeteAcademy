@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/hamburger.css">
+    <title>AndraGongenGillt</title>
+</head>
+<body onload="CheckLoggedIn()">
+
+        <nav class="navbar navbar-light pos-f-t header" role="navigation">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand" href="Search.html">
+                <img src="images/e3a2ccee-c828-411a-9168-c7419adb16817.png" height="40" alt="" />
+            </a>
+
+        </nav>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="header-lightblue">
+                <ul class="list-group">
+                    <a href="About.html"><li class="list-group-item">Om Shoppiq</li></a>
+
+                    <!--<li class="list-group-item"><a href="MataStart.html">Start</a></li>
+    <li class="list-group-item"><a href="Search.html">Search</a></li>
+    <li class="list-group-item"><a href="SignUp.html">Sign up</a></li>
+    <li class="list-group-item"><a href="MyPage.html">Min Sida</a></li>
+
+    <li class="list-group-item"><a href="#" onclick="Logout()">Log out</a></li>-->
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="contentDiv">
+            <div class="container myinputfields">
+
+                <form onsubmit="LogIn(); return false" style="text-align:center" class="justify-content-center">
+
+                    <input type="email" class="form-control" id="Username" placeholder="E-mail" required>
+                    <br />
+                    <input type="password" class="form-control" id="Password" placeholder="Lösenord" required>
+                    <br />
+                    <button type="submit" class="btn btn-info">Logga in</button>
+
+                </form>
+
+                <br />
+                <div id="LoginErrorMessageDiv"><br /></div>
+                <br />
+
+                <!--<h6>Inte medlem?</h6>-->
+                <button type="button" class="btn btn-light"><a href="SignUp.html">Registrera användare</a></button>
+                
+                <br />
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="container-fluid">
+                <a href="#" onclick="scrollToTop()" id="goToTopLink">Gå till toppen</a>
+                <br />
+                <br />
+                <p>&copy; 2019 ShoppiqApp</p>
+            </div>
+        </footer>
+
+            <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+            <script type="text/javascript" src="cordova.js"></script>
+            <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+            <script type="text/javascript" src="scripts/index.js"></script>
+
+</body>
+</html>

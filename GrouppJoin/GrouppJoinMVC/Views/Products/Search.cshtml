@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewData["Title"] = "Search";
+}
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+<h1>Search</h1>
+
+<input type="text" value="" id="searchText" />
+@*<input type="text" value="" id="searchText2" />*@
+<button id="btnJson">Sök</button>
+<button id="btnJsonRating">Sök med rating</button>
+<button id="btnDetails">Details</button>
+<button id="btnDetailsNEW">DetailsNEW</button>
+<div id="product">
+
+</div>
+<div id="productR"></div>
+
+<div id="Details"></div>
+
+
+
+
+
+
+
+
+
+@section scripts
+{
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+    <script>
+
+        $("#btnDetails").click(function () {
+            var id = $("#searchText").val();
+            $.ajax({
+                url: "/GetDetailsById/" + id,
+                type: "GET",
+                success: function (result) {
+                    var html;
+                    for (var i = 0; i < result.length; i++) {
+                        html += "<h2>" + result[i].name + "</h2>"
+
+                    }
+
+                    $("#Details").html(html);
+                }
+            })
+        })
+    </script>
+
+
+    <script>
+
+        $("#btnJson").click(function () {
+            var id = $("#searchText").val();
+            $.ajax({
+                url: "/searchResult/" + id,
+                type: "GET",
+                success: function (result) {
+                    var html;
+                    for (var i = 0; i < result.length; i++) {
+                        html += "<h2>" + result[i].name + "</h2>"
+
+                    }
+
+                    $("#product").html(html);
+                }
+            })
+        })
+    </script>
+
+    <script>
+
+        $("#btnJsonRating").click(function () {
+            var id = $("#searchText").val();
+            $.ajax({
+                url: "/searchTotalResult/" + id,
+                type: "GET",
+                success: function (result) {
+                    var html = "<div><h2>" +
+                        result[0].rating + "</h2><p>" + result[0].name + "<p/></div>"
+
+                    $("#productR").html(html);
+                }
+            })
+        })
+    </script>
+
+    <script>
+
+        $("#btnDetailsNEW").click(function () {
+            var tID = $("#searchText").val();
+            $.ajax({
+                url: "/Bootstrap/" + tID,
+                beforeSend: function(xhr){xhr.setRequestHeader('X-Token', 'test-value');},
+                type: "GET",
+                success: function (result) {
+                    $("#Details").html(result);
+                }
+            });
+
+        });
+    </script>
+
+    @*<script>
+            $("#searchText2").change(function () {
+                var id = $("#searchText2").val();
+                $.ajax({
+                    url: "/searchResult/" + id,
+                    type: "GET",
+                    success: function (result) {
+                       var html;
+                        for (var i = 0; i < result.length; i++) {
+                        html += "<h2>"+result[i].name+"</h2>"
+
+                        }
+
+                        $("#product").html(html);
+                    }
+                })
+            });
+        </script>
+        <script>
+            $("#other").click(function () {
+                $(".target").change();
+            });
+        </script>*@
+    @*<script>
+
+            $("#searchText2").change(function () {
+                var id = $("#searchText2").val();
+                $.ajax({
+                    url: "/searchResult/" + id,
+                    type: "GET",
+                    success: function (result) {
+                        var html = "<div><h2>" +
+                            result[0].name + "</h2></div>"
+
+                        $("#product").html(html);
+                    }
+                })
+            })
+        </script>*@
+}
+
+}

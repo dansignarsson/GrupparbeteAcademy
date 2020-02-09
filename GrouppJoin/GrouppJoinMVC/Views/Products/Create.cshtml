@@ -1,0 +1,40 @@
+﻿@model ProductsCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+    <form asp-controller="Product" asp-action="create" method="post">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"> </span>
+
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+
+        <label asp-for="Price"></label>
+        <input asp-for="Price" />
+        <span asp-validation-for="Price"></span>
+
+        <label asp-for="Brand"></label>
+        <input asp-for="Brand" />
+        <span asp-validation-for="Brand"></span>
+
+        <label asp-for="ImgUrl"></label>
+        <input asp-for="ImgUrl" />
+        <span asp-validation-for="ImgUrl"></span>
+
+        @foreach (var item in Model.TemperItems)
+        {
+            <input type="checkbox"
+                   name="@nameof(ProductsCreateVM.SelectedTemperValues)"
+                   value="@item.Value"
+                   id="Temper_@item.Value" />
+            <label for="Temper_@item.Value">@item.Text</label>
+            <br />
+        }
+        <br />
+
+        <input type="submit" value="Create" />
+    </form>
+

@@ -1,0 +1,31 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/skeleton.css">
+
+</head>
+<body>
+    @*<partial name="_HamburgerMenu" />*@
+    <div class="menubarTop">
+        <ul>
+
+            <li><a asp-controller="Account" asp-action="Login">Logga In</a></li>
+            <li><a asp-controller="Account" asp-action="Register">Registrera användare</a></li>
+            <li><a asp-controller="Products" asp-action="create">Skapa Produkt</a></li>
+            <li><a asp-controller="Products" asp-action="Search">Test sida</a></li>
+            <li><a asp-controller="Rating" asp-action="Add">Lägg till rating</a></li>
+        </ul>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    @RenderSection("scripts", false)
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/hamburger.css">
+
+    <title>AndraGongenGillt</title>
+</head>
+<body onload="GetUserInfo()">
+
+    <nav class="navbar navbar-light pos-f-t header" role="navigation">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" onclick="GetFirstNameFromLocalStorage()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="Search.html">
+            <img src="images/e3a2ccee-c828-411a-9168-c7419adb16817.png" height="40" alt="" />
+        </a>
+
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="header-lightblue">
+            <ul class="list-group">
+                <div id="UserFirstNameDiv"></div>
+
+
+                <!--<a href="MataStart.html"><li class="list-group-item">Start</li></a>-->
+                <a href="Search.html"><li class="list-group-item">Sök</li></a>
+                <!--<a href="SignUp.html"><li class="list-group-item">Sign up</li></a>-->
+                <a href="MyPage.html"><li class="list-group-item">Min Sida</li></a>
+                <a href="About.html"><li class="list-group-item">Om Shoppiq</li></a>
+                <a href="#" onclick="Logout()"><li class="list-group-item">Logga ut</li></a>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="contentDiv">
+
+        <div id="UserInfoDiv"></div>
+
+        <h6>Mina omdömen</h6>
+
+        <div id="UserCommentsDiv"></div>
+
+    </div>
+
+
+    <footer>
+        <div class="container-fluid">
+            <a href="#" onclick="scrollToTop()" id="goToTopLink">Gå till toppen</a>
+            <br />
+            <br />
+            <p>&copy; 2019 ShoppiqApp</p>
+        </div>
+    </footer>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>

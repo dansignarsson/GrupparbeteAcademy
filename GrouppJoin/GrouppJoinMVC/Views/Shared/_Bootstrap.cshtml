@@ -1,0 +1,35 @@
+﻿@model ProductSearchTotalResultVM[]
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="container">
+    <div class="row">
+        @for (int i = 0; i < Model.Length; i++)
+        {
+
+
+        <div class="col">
+
+            @if (Model[i].ImgUrl != null)
+            {<img src="@Model[i].ImgUrl" class="img-fluid" />}
+            else
+            {<img src=" https://bevent-rasch.se/wp-content/themes/br.se/bilder/produkt/ingen_bild_finns.jpg" class="img-fluid" />}
+
+            @if (Model[i].Rating >= 0.0 && Model[i].Rating <= 5.0)
+            {<h2>@Model[i].Rating</h2>}
+            else
+            {<h2>Saknar rating</h2>}
+            
+            <h3>@Model[i].Name</h3>
+            <h4>Ca @Model[i].Price kr</h4>
+        </div>
+            if (i % 2 == 1)
+            {
+                <div class="w-100"></div>
+
+            }
+        }
+
+    </div>
+</div>

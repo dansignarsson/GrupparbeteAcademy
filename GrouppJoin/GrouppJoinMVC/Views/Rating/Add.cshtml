@@ -1,0 +1,32 @@
+﻿@model RatingAddVM
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+
+    <form asp-controller="Rating" asp-action="Add" method="post">
+
+
+        <label asp-for="ListOfProducts"></label>
+        <select asp-for="SelectedProductValue"
+                asp-items="Model.ListOfProducts"></select>
+        <span asp-validation-for="SelectedProductValue"></span>
+
+        <label asp-for="UserId"></label>
+        <input asp-for="UserId" />
+        <span asp-validation-for="UserId"> </span>
+
+        <label asp-for="Rating"></label>
+        <input asp-for="Rating" />
+        <span asp-validation-for="Rating"></span>
+
+        <label asp-for="Comment"></label>
+        <input asp-for="Comment" />
+        <span asp-validation-for="Comment"></span>
+
+
+
+        <br />
+        <input type="submit" value="Add" />
+    </form>
